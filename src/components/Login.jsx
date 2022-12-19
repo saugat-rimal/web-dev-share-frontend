@@ -1,19 +1,35 @@
-import axios from "axios";
 import jwt_decode from "jwt-decode";
-import { GoogleLogin, googleLogout } from "@react-oauth/google";
+import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 import shareVideo from "../assets/share.mp4";
 import logo from "../assets/logowhite.png";
+import { client } from "../client";
 
 const Login = () => {
-  const createOrGetUser = async (response: any, addUser: any) => {
-    const decoded = jwt_decode(response.credential);
+  const navigate = useNavigate();
+  const responseGoogle = async (response) => {
+    console.log(response);
+    // const decoded = jwt_decode(response.credential);
 
-    console.log(decoded);
+    localStorage.setItem(
+      "user",
+      JSON.stringify(jwt_decode(response.credential))
+    );
+
+    const { name, picture, sub } = jwt_decode(response.credential);
+
+    const doc = {
+      _id: sub,
+      _type: "user",
+      userName: name,
+      image: picture,
+    };
+
+    client.createIfNotExists(doc).then(() => {
+      navigate("/", { replace: true });
+    });
   };
-
-  const user = false;
 
   return (
     <div className="flex justify-start items-start flex-col h-screen">
@@ -33,14 +49,7 @@ const Login = () => {
           </div>
 
           <div className="shadow-2xl">
-            {user ? (
-              <div>Logged In</div>
-            ) : (
-              <GoogleLogin
-                onSuccess={(response) => createOrGetUser(response)}
-                onError={console.log("error")}
-              />
-            )}
+            <GoogleLogin onSuccess={responseGoogle} onError={responseGoogle} />
           </div>
         </div>
       </div>
