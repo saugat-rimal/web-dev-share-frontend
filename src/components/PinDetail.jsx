@@ -110,7 +110,7 @@ const PinDetail = ({ user }) => {
 
               <div>
                 <a
-                  className="flex items-center gap-2 bg-white rounded-full px-5 py-2 text-l opacity-75 hover:opacity-100 hover:shadow-md text-dark hover:text-white hover:bg-black focus:outline-none transition-all duration-500 ease-in-out  "
+                  className="flex items-center gap-2 bg-white rounded-full px-5 py-2 opacity-75 hover:opacity-100 hover:shadow-md text-dark hover:text-white hover:bg-black focus:outline-none transition-all duration-500 ease-in-out  "
                   href={pinDetail.destination}
                   target="_blank"
                   rel="noreferrer"

@@ -9,6 +9,7 @@ import Pins from "./Pins";
 
 import { userQuery } from "../utils/data";
 import { fetchUser } from "../utils/fetchUser";
+import About from "../components/About";
 
 const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
@@ -65,6 +66,7 @@ const Home = () => {
       <div className="pb-2 flex-1 h-screen overflow-y-scroll " ref={scrollRef}>
         <Routes>
           <Route path="/user-profile/:userId" element={<UserProfile />} />
+          <Route path="/about" element={<About />} />
           <Route path="/*" element={<Pins user={user && user} />} />
         </Routes>
       </div>
