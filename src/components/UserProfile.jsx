@@ -17,10 +17,10 @@ const randomImage =
   "https://source.unsplash.com/1600x900/?nature,water.photography,coding";
 
 const activeBtnStyles =
-  " bg-red-500 text-white font-semibold p-2 rounded-full w-20 outline-none ";
+  " bg-red-500 text-white font-medium p-2 rounded-full w-20 outline-none ";
 
 const notActiveBtnStyles =
-  " bg-primary mr-4 text-black font-semibold p-2  rounded-full w-20 outline-none ";
+  " bg-primary mr-4 text-black font-medium p-2  rounded-full w-20 outline-none ";
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
@@ -66,11 +66,11 @@ const UserProfile = () => {
           <div className=" flex flex-col justify-center items-center">
             <img
               src={randomImage}
-              className="w-full h-370 2xl:h-510 shadow-lg object-cover"
+              className="w-full h-1/5 2xl:h-370 shadow-lg object-cover object-center	"
               alt="bannerImage"
             />
             <img
-              className="rounded-full w-30 h-30  -m-12 shadow-xl object-cover"
+              className="rounded-full w-30 h-30  -m-12 shadow-xl object-center	 object-cover"
               src={user.image}
               alt="userImage"
             />

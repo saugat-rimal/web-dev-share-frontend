@@ -85,7 +85,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                 <button
                   type="button"
                   onClick={(e) => e.stopPropagation()}
-                  className=" bg-red-500 opacity-70 hover:opacity-100 text-white font-semibold px-5 py-1 text-center text-base rounded-3xl hover:shadow-md outline-none "
+                  className=" bg-red-500 opacity-70 hover:opacity-100 text-white font-medium px-5 py-1 text-center text-base rounded-3xl hover:shadow-md outline-none "
                 >
                   {save?.length} Saved
                 </button>
@@ -96,7 +96,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                     e.stopPropagation();
                     savePin(_id);
                   }}
-                  className=" bg-red-500 opacity-70 hover:opacity-100 text-white font-semibold px-5 py-1 text-center text-base rounded-3xl hover:shadow-md outline-none "
+                  className=" bg-red-500 opacity-70 hover:opacity-100 text-white font-medium px-5 py-1 text-center text-base rounded-3xl hover:shadow-md outline-none "
                 >
                   {savingPost ? "Saving" : "Save"}
                 </button>
@@ -109,7 +109,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                   href={destination}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
+                  className="bg-white flex items-center gap-2 text-black font-medium p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
                 >
                   <BsFillArrowUpRightCircleFill />
                   {destination.length > 24
@@ -125,7 +125,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                     e.stopPropagation();
                     deletePin(_id);
                   }}
-                  className=" bg-white p-2 opacity-70 hover:opacity-100 text-dark font-semibold text-center text-base rounded-3xl hover:shadow-md outline-none "
+                  className=" bg-white p-2 opacity-70 hover:opacity-100 text-dark font-medium text-center text-base rounded-3xl hover:shadow-md outline-none "
                 >
                   <AiTwotoneDelete />
                 </button>
@@ -143,7 +143,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
           src={postedBy?.image}
           alt="user-profile"
         />
-        <p className="font-semibold capitalize text-dark ">
+        <p className="font-medium capitalize text-dark ">
           {postedBy?.userName}
         </p>
       </Link>

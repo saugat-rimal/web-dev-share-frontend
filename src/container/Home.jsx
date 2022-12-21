@@ -4,7 +4,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { Link, Route, Routes } from "react-router-dom";
 import { Sidebar, UserProfile } from "../components";
 import { client } from "../client";
-import logo from "../assets/logo.png";
+import logo from "../assets/favicon.png";
 import Pins from "./Pins";
 
 import { userQuery } from "../utils/data";
@@ -34,17 +34,18 @@ const Home = () => {
         <Sidebar user={user && user} />
       </div>
       <div className="flex md:hidden flex-row">
-        <div className="p-2 w-full flex flex-row justify-between items-center shadow-md ">
+        <div className="p-2 w-full flex flex-row justify-between items-center shadow-sm ">
           <HiMenu
             fontSize={35}
             className="cursor-pointer"
             onClick={() => setToggleSidebar(true)}
           />
-          <Link to="/">
-            <img src={logo} alt="logo" className="w-28" />
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="logo" className="w-8" />
+            <p className=" font-medium">Web Dev Share</p>
           </Link>
           <Link to={`/user-profile/${user?._id}`}>
-            <img src={user?.image} alt="logo" className="w-9 rounded-md" />
+            <img src={user?.image} alt="logo" className="w-9 rounded" />
           </Link>
         </div>
         {toggleSidebar && (

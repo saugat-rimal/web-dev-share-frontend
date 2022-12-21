@@ -148,7 +148,7 @@ const CreatePin = ({ user }) => {
                 alt=""
                 className=" w-10 shadow-md h-10 rounded-full"
               />
-              <p className="font-semibold">{user.userName}</p>
+              <p className="font-medium">{user.userName}</p>
             </div>
           )}
           <input
@@ -169,7 +169,7 @@ const CreatePin = ({ user }) => {
 
           <div className="flex flex-col">
             <div>
-              <p className=" font-semibold pb-3">Choose Pin Category</p>
+              <p className=" font-medium pb-3">Choose Pin Category</p>
               <select
                 onChange={(e) => setCategory(e.target.value)}
                 className="border-2 border-gray-300 p-3 outline-none focus:border-gray-400  text-gray-400 focus:text-gray-600 transition-all duration-150 cursor-pointer ease-in-out w-full"

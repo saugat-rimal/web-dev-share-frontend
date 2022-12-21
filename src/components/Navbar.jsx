@@ -9,12 +9,16 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
 
   return (
     <div className="flex gap-2 md:gap-5 w-full mt-5 pb-7 ">
-      <div className="flex flex-1 justify-start items-center w-full px-2 rounded-md border-none outline-none  focus-within:shadow-sm">
-        <IoMdSearch fontSize={21} className="ml-1" />
+      <div className="flex gap-3 flex-1 justify-start items-center w-full px-2 border-none outline-none ">
+        <IoMdSearch
+          fontSize={25}
+          onClick={(e) => setSearchTerm(e.target.value)}
+          className="ml-1 cursor-pointer"
+        />
         <input
           type="text"
           placeholder="Search"
-          className="w-full p-2 py-1 bg-white outline-none rounded-md"
+          className=" w-full border-2 border-gray-300 p-3 outline-none focus:border-gray-400 transition-all duration-150 ease-in-out  focus-within:shadow-sm"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={() => navigate("/search")}
@@ -26,14 +30,14 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
           <img
             src={user.image}
             alt={user.userName}
-            className="w-12 h-12 rounded-lg"
+            className="w-12 h-12 rounded-sm"
           />
         </Link>
         <Link
           to="create-pin"
-          className="bg-black text-white rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center"
+          className="bg-black text-white rounded-sm w-12 h-12 md:w-13 md:h-12 flex justify-center items-center"
         >
-          <IoMdAdd />
+          <IoMdAdd fontSize={25} />
         </Link>
       </div>
     </div>
