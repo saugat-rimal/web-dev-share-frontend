@@ -1,3 +1,5 @@
+import { GoogleOAuthProvider } from "@react-oauth/google";
+
 import jwt_decode from "jwt-decode";
 import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +11,7 @@ import { client } from "../client";
 const Login = () => {
   const navigate = useNavigate();
   const responseGoogle = async (response) => {
-    console.log(response);
+    // console.log(response);
     // const decoded = jwt_decode(response.credential);
 
     localStorage.setItem(
@@ -49,7 +51,14 @@ const Login = () => {
           </div>
 
           <div className="shadow-2xl">
-            <GoogleLogin onSuccess={responseGoogle} onError={responseGoogle} />
+            <GoogleOAuthProvider
+              clientId={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}
+            >
+              <GoogleLogin
+                onSuccess={responseGoogle}
+                onError={responseGoogle}
+              />
+            </GoogleOAuthProvider>
           </div>
         </div>
       </div>
