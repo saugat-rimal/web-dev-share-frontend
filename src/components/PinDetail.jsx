@@ -79,7 +79,7 @@ const PinDetail = ({ user }) => {
           />
         </div>
         <div className="w-full p-5 flex-1 xl:min-w-620">
-          <div className=" flex  gap-4 flex-wrap-reverse items-center justify-between">
+          <div className=" flex  gap-4 flex-wrap items-center justify-between">
             <div>
               <Link
                 to={`/user-profile/${pinDetail.postedBy?._id}`}
@@ -96,7 +96,7 @@ const PinDetail = ({ user }) => {
               </Link>
             </div>
 
-            <div className="flex gap-4  ">
+            <div className="flex flex-wrap gap-4  ">
               <div className="flex gap-2 items-center justify-between">
                 <a
                   href={`${pinDetail.image?.asset?.url}?dl=`}
@@ -116,7 +116,10 @@ const PinDetail = ({ user }) => {
                   rel="noreferrer"
                 >
                   <BsFillArrowUpRightCircleFill />{" "}
-                  {pinDetail.destination.slice(8)}
+                  {/* {pinDetail.destination.slice(8)} */}
+                  {pinDetail.destination.length > 24
+                    ? pinDetail.destination.slice(8, 30) + "..."
+                    : pinDetail.destination.slice(8)}
                 </a>
               </div>
             </div>
@@ -153,7 +156,7 @@ const PinDetail = ({ user }) => {
             ))}
           </div>
 
-          <div className="flex items-center flex-wrap mt-6 gap-3 ">
+          <div className="flex  items-center flex-wrap mt-6 gap-3 ">
             <Link to={`/user-profile/${pinDetail.postedBy?._id}`}>
               <img
                 className="w-10 h-10 rounded-full cursor-pointer"
@@ -163,14 +166,15 @@ const PinDetail = ({ user }) => {
             </Link>
             <input
               type="text"
-              className=" h-12 flex-1 border-2 border-gray-300 p-3 outline-none focus:border-gray-400  text-gray-400 focus:text-gray-600 transition-all duration-150 cursor-pointer ease-in-out w-full"
+              className=" h-12 sm:flex-1   border-2 border-gray-300 p-3 outline-none focus:border-gray-400  text-gray-400 focus:text-gray-600 transition-all duration-150 cursor-pointer ease-in-out w-full"
               placeholder="Add a comment..."
               value={comment}
               onChange={(e) => setComment(e.target.value)}
             />
+
             <button
               type="button"
-              className="bg-red-500 text-white rounded-full px-6 py-2 font-semibold text-base"
+              className="bg-red-500  text-white rounded-full px-6 py-2 font-semibold text-base"
               onClick={addComment}
             >
               {addingComment ? " Posting the comment..." : "Post"}
