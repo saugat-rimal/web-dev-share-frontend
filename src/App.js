@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import Login from "./components/Login";
 import Home from "./container/Home";
 import { fetchUser } from "./utils/fetchUser";
-import Spinner from "./components/Spinner";
 
 const App = () => {
   const navigate = useNavigate();
@@ -15,11 +14,9 @@ const App = () => {
     const user = fetchUser();
 
     if (!user) {
-      <Spinner message="Logging you in ..." />;
-
       navigate("/login");
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <Routes>
