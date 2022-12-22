@@ -68,7 +68,7 @@ const PinDetail = ({ user }) => {
   return (
     <>
       <div
-        className="flex xl:flex-col flex-col m-auto bg-white p-8 lg:p-11"
+        className="flex xl:flex-col flex-col m-auto bg-white sm:p-8 lg:p-11"
         style={{ maxWidth: "1500px" }}
       >
         <div className="flex justify-center items-center md:items-start flex-initial">
@@ -79,7 +79,7 @@ const PinDetail = ({ user }) => {
           />
         </div>
         <div className="w-full p-5 flex-1 xl:min-w-620">
-          <div className=" flex  gap-4 flex-wrap-reverse items-center justify-between">
+          <div className=" flex  gap-4 flex-wrap items-center justify-between">
             <div>
               <Link
                 to={`/user-profile/${pinDetail.postedBy?._id}`}
