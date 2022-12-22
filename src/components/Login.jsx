@@ -50,15 +50,15 @@ const Login = () => {
             <img src={logo} alt="logo" width="60px" />
             <p className="text-white text-2xl font-medium">Web Dev Share</p>
           </div>
-          <div className="w-[400px]">
-            <p className="text-white text-center pb-10 shadow-xl">
+          <div className="max-w-[400px] p-2">
+            <p className="text-white text-center pb-10 ">
               The place to share your ideas and expertise with the world. And if
               you want to, you can use it to promote your business, portfolio,
               blogs, and many more.{" "}
             </p>
           </div>
 
-          <div className="shadow-2xl">
+          <div>
             <p className="text-white text-l capitalize text-center pb-4">
               Sign In to continue
             </p>
