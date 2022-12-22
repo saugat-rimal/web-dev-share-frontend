@@ -79,7 +79,7 @@ const PinDetail = ({ user }) => {
           />
         </div>
         <div className="w-full p-5 flex-1 xl:min-w-620">
-          <div className=" flex  gap-4 flex-wrap items-center justify-between">
+          <div className=" flex  gap-4 flex-wrap-reverse items-center justify-between">
             <div>
               <Link
                 to={`/user-profile/${pinDetail.postedBy?._id}`}
@@ -166,12 +166,11 @@ const PinDetail = ({ user }) => {
             </Link>
             <input
               type="text"
-              className=" h-12 sm:flex-1   border-2 border-gray-300 p-3 outline-none focus:border-gray-400  text-gray-400 focus:text-gray-600 transition-all duration-150 cursor-pointer ease-in-out w-full"
+              className=" h-12 flex-1 border-2 border-gray-300 p-3 outline-none focus:border-gray-400  text-gray-400 focus:text-gray-600 transition-all duration-150 cursor-pointer ease-in-out w-full"
               placeholder="Add a comment..."
               value={comment}
               onChange={(e) => setComment(e.target.value)}
             />
-
             <button
               type="button"
               className="bg-red-500  text-white rounded-full px-6 py-2 font-semibold text-base"
